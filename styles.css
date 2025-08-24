@@ -1,0 +1,91 @@
+/* ========== Global Styles ========== */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  margin: 0.5em 0;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+/* ========== GRID LAYOUT ========== */
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "nav nav"
+    "content sidebar"
+    "footer footer";
+  grid-template-columns: 2fr 1fr;
+  gap: 15px;
+  padding: 15px;
+}
+
+.header { grid-area: header; background: #4CAF50; color: white; text-align: center; padding: 20px; border-radius: 8px; }
+.navbar { grid-area: nav; background: #333; border-radius: 8px; }
+.content { grid-area: content; background: #f9f9f9; padding: 15px; border-radius: 8px; }
+.sidebar { grid-area: sidebar; background: #eee; padding: 15px; border-radius: 8px; }
+.footer { grid-area: footer; background: #444; color: white; text-align: center; padding: 10px; border-radius: 8px; }
+
+/* ========== FLEXBOX (Nav + Cards) ========== */
+.nav-list {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+  padding: 10px;
+}
+
+.nav-list li {
+  padding: 10px;
+}
+
+.destinations {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.card {
+  flex: 1 1 calc(50% - 10px);
+  background: #2196F3;
+  color: white;
+  padding: 30px;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 1.2rem;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+
+/* Tablets */
+@media (max-width: 900px) {
+  .grid-container {
+    grid-template-areas:
+      "header"
+      "nav"
+      "content"
+      "sidebar"
+      "footer";
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .nav-list {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .card {
+    flex: 1 1 100%;
+  }
+}
